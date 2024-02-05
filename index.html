@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="js - estudos">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,200;0,700;1,300;1,400&family=Open+Sans&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <title>PROJECT VIACEP</title>
+</head>
+
+<body>
+  <header class="nav-container">
+    <nav id="navegacao">
+      <h1>PROJECT VIACEP</h1>
+      <a href="#">CONTATOS</a>
+    </nav>
+  </header>
+  <main>
+    <section id="form-section">
+      <div id="div-form">
+        <form name="newAddress">
+        <div>
+          <label for="cep"></label>
+          <input type="text" name="cep" id="cep" class="form-input" placeholder="CEP">
+        </div>
+        <div class="error-msg" data-error="cep"></div>
+
+        <div>
+          <label for="logradouro"></label>
+          <input type="text" name="logradouro" id="logradouro" class="form-input" placeholder="Logradouro">
+        </div>
+
+        <div>
+          <label for="numero"></label>
+          <input type="number" name="number" id="numero" class="form-input" placeholder="Número">
+        </div>
+        <div class="error-msg" data-error="number"></div>
+
+        <div>
+          <label for="cidade"></label>
+          <input type="text" name="cidade" id="cidade" class="form-input" placeholder="Cidade">
+        </div>
+        <div class="buttons">
+          <button type="submit" class="btn-left" name="btnSave">SALVAR</button> <button class="btn-right" name="btnClear">LIMPAR</button>
+        </div>
+      </form>
+      </div>
+
+
+    </section>
+    <section id="list-section">
+      <div class="card">
+        <h3>São Paulo</h3>
+        <p class="address">Rua Jardins 720</p>
+        <p class="cep">11200-32</p>
+      </div>
+
+
+    </section>
+  </main>
+  <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>

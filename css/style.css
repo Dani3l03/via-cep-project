@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #ffa500;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+#form-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 200px;
+  display: flex;
+  justify-content: center;
+}
+
+#div-form {
+  max-width: 900px;
+  min-width: 200px;
+  background-color: #333;
+  border-radius: 4px;
+  justify-content: center;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#list-section {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: #333;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card h3 {
+  color: #ff8400;
+  font-size: 18px;
+}
+
+.address {
+  font-size: 14px;
+}
+
+.cep {
+  color: #8f8f8f;
+  font-size: 12px;
+}
+
+.error-msg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #faa;
+}
+
+.form-input {
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 0;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-input:disabled {
+  background: #ddd;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  background: #ffa500;
+  border: 0;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.1cap;
+  cursor: pointer;
+  width: 240px;
+  height: 60px;
+  max-width: 300px;
+}
+
+.btn-right {
+  margin-left: 5px;
+}
+
+.btn-left {
+  margin-right: 5px;
+}
