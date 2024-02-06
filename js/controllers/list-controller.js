@@ -23,10 +23,12 @@ function createCard(address){
     h3.innerHTML = address.city;
 
     const line = document.createElement("p");
+    line.classList.add("address");
     line.innerHTML = `${address.street}, ${address.number}`
 
     const cep = document.createElement("p");
-    line.innerHTML = `${address.cep}`
+    cep.classList.add("cep");
+    cep.innerHTML = `${address.cep}`
 
     div.appendChild(h3);
     div.appendChild(line);

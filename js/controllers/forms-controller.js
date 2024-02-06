@@ -2,7 +2,7 @@ import Address from '../models/address.js'
 import * as addressService from '../services/exceptions/address-service.js';
 import * as listController from './list-controller.js';
 
-
+// função construtora = constroí o objeto.
 function State(){
       this.address = new Address();
 
@@ -17,7 +17,7 @@ function State(){
 
 const state = new State();
 
-
+// função incial, atribui aos objetos seus respectivos formulários no documento, alḿe de executar os eventos.
 export function init(){
       state.inputCep = document.forms.newAddress.cep;
       state.inputStreet = document.forms.newAddress.logradouro;
@@ -68,13 +68,23 @@ async function handleInputCepChange(event){
       } 
 }
 
-
-async function handleBtnSaveClick(event){
+// executa a função para prevenir o padrão e executa a função addCard que adiciona o card de endereço que foi exportado, e limpa os forms.
+function handleBtnSaveClick(event){
       event.preventDefault();
+
+      const errors = addressService.getErrors(state.address);
+
+      const keys = Object.keys(errors);
+
+      if(keys.length > 0){
+            keys.forEach(key => {
+                  setFormError(key, errors[key])
+            })
+      } else {
       listController.addCard(state.address);
+      clearForm();
+      }
  }
-
-
 
 // função que verifica o valor do formulário e se ele foi preenchido.
 function handleInputNumberChange(event){
@@ -86,15 +96,11 @@ function handleInputNumberChange(event){
       console.log(event)
 }
 
-
-
 // adiciona o valor ao div relacionado a chave do objeto.
 function setFormError(key, value){
       const element = document.querySelector(`[data-error=${key}]`);
       element.innerHTML = value;
 }
-
-
 
 // impede a ação normal do botão e executa a função para limpar os espaços.      
 function handleBtnClearClick(event){
@@ -102,7 +108,7 @@ function handleBtnClearClick(event){
       clearForm();
 }
 
-// vai limpar os forms. 
+// vai limpar os forms e as mensagens de erro.
 function clearForm(){
       state.inputCep.value = "";
       state.inputCity.value = "";
@@ -111,6 +117,8 @@ function clearForm(){
 
       setFormError("cep", "");
       setFormError("number", "");
+
+      state.address = new Address(); // cria um novo objeto pois o objeto usado fica com o endereço anterior salvo, para evitar repetição de endereço.
 
       state.inputCep.focus();
 }
